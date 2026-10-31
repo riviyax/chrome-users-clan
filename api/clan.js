@@ -1,6 +1,9 @@
 // Vercel serverless proxy: keeps your CoC API token off the browser and avoids CORS.
+require('dotenv').config();
+
 const TAG = encodeURIComponent(process.env.CLAN_TAG || '#2CYGVVU9Y');
 const BASE = process.env.COC_API_BASE || 'https://cocproxy.royaleapi.dev/v1';
+
 
 module.exports = async (req, res) => {
   const headers = { Authorization: `Bearer ${process.env.COC_API_TOKEN}` };

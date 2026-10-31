@@ -1,1 +1,31 @@
-{"name":"chrome-users-clan","version":"1.0.0","private":true,"engines":{"node":">=18"},"dependencies":{"express":"^5.3.0"}}
+{
+  "name": "chrome-users-clan",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0"
+  },
+  "description": "1. Create a key at https://developer.clashofclans.com with allowed IP **45.79.218.79** (RoyaleAPI proxy). 2. Deploy to Vercel (`vercel`), add env var `COC_API_TOKEN`. Optional env: `CLAN_TAG` (default #2CYGVVU9Y), `COC_API_BASE` (default https://cocproxy.royaleapi.dev/v1). Local dev: `vercel dev`.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riviyax/chrome-users-clan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/riviyax/chrome-users-clan/issues"
+  },
+  "homepage": "https://github.com/riviyax/chrome-users-clan#readme"
+}
