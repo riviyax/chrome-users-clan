@@ -4,6 +4,9 @@ const app = express();
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
+app.get('/stats', (req, res) => {
+    res.sendFile(__dirname + '/stats.html');
+});
 app.get('/api/clan', require('./api/clan.js'));
 app.get('/api/player', require('./api/player.js'));
 app.use(express.static(__dirname));
