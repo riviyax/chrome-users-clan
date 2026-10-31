@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Clan stats · Chrome Users</title>
+<meta name="theme-color" content="#fff6ec">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="common.css">
+<style>
+header.top{padding:clamp(24px,5vw,40px) 0 4px}
+header.top h1{font-size:clamp(40px,10vw,84px);letter-spacing:-.04em}
+header.top p{color:var(--sub);margin:10px 0 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:22px}
+.card{padding:14px 16px;border-radius:18px}.card span,.card small{display:block;color:var(--sub);font-size:12.5px}
+.card b{font:800 clamp(22px,5vw,28px) 'Fredoka',sans-serif;overflow-wrap:anywhere}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px;margin-top:22px}
+.panel{padding:20px;--c:var(--line)}.panel:nth-child(4n+1){--c:var(--red)}.panel:nth-child(4n+2){--c:var(--yellow)}.panel:nth-child(4n+3){--c:var(--green)}.panel:nth-child(4n){--c:var(--blue)}
+.panel h2{font-size:22px;margin-bottom:14px}
+.bar{display:grid;grid-template-columns:54px 1fr 34px;gap:10px;align-items:center;margin:8px 0;font-size:14px}
+.bar div{background:var(--card2);border-radius:6px;overflow:hidden}.bar u{display:block;height:14px;border-radius:6px;background:var(--c,var(--blue));min-width:4px}.bar em{font-style:normal;color:var(--sub);text-align:right}
+.lead{list-style:none;margin:0;padding:0;counter-reset:l}
+.lead li{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);counter-increment:l}
+.lead li:last-child{border:0}.lead span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lead li::before{content:counter(l);width:26px;height:26px;border-radius:50%;background:var(--card2);color:var(--sub);display:grid;place-items:center;font-size:12px;font-weight:800;flex:none}
+.lead li:nth-child(-n+3)::before{background:var(--yellow);color:#111}
+.lead b{margin-left:auto;font-variant-numeric:tabular-nums}
+.head{display:flex;gap:10px;flex-wrap:wrap;margin:36px 0 12px;align-items:center}.head h2{font-size:clamp(26px,5vw,34px);margin:0 auto 0 0}
+.head input{flex:1 1 180px}
+.rl{margin-bottom:60px}
+.ext .r.h,.ext .r{min-width:0}
+@media(min-width:721px) and (max-width:980px){.rl{overflow-x:auto}.ext .r{min-width:820px}}
+@media(max-width:720px){nav .sp .hide{display:none}.live span:last-child{display:none}}
+</style>
+</head>
+<body>
+<div id="pre" role="status" aria-label="Loading"><div class="pl"><span class="ring"><i></i></span><b>Gathering the clan</b><p><u></u><u></u><u></u></p></div></div>
+<nav><div class="wrap">
+  <a class="logo" href="index.html"><span class="ring"><i></i></span><span class="disp" id="nm">Chrome Users</span></a>
+  <div class="sp">
+    <div class="live"><span class="dot" id="dot"></span><span id="upd">Loading…</span></div>
+    <button class="btn ghost sm" id="refresh">Refresh</button>
+    <a class="btn ghost sm hide" href="index.html">Home</a>
+    <a class="btn sm deeplink" href="#">Join</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+  <header class="top"><h1>Clan stats</h1><p id="sub">Live numbers straight from the game. Updates every 30 seconds.</p></header>
+  <div class="cards" id="cards"><div class="msg" style="grid-column:1/-1">Loading clan data…</div></div>
+  <div class="two">
+    <div class="panel k"><h2>Town Hall spread</h2><div id="thbars"></div></div>
+    <div class="panel k"><h2>Roles</h2><div id="rolebars"></div></div>
+    <div class="panel k"><h2>Current war</h2><div id="warbox"></div></div>
+    <div class="panel k"><h2>Top donors</h2><ol class="lead" id="donors"></ol></div>
+    <div class="panel k"><h2>Top trophies</h2><ol class="lead" id="tops"></ol></div>
+  </div>
+  <div class="head">
+    <h2>Member table</h2>
+    <input id="q" type="search" placeholder="Search members" aria-label="Search members">
+    <select id="sort" aria-label="Sort members">
+      <option value="rank">Clan rank</option><option value="trophies">Trophies</option><option value="donations">Donated</option><option value="received">Received</option><option value="ratio">Donation ratio</option><option value="th">Town Hall</option><option value="level">XP level</option>
+    </select>
+  </div>
+  <div class="rl ext" id="rl"></div>
+</main>
+
+<script src="common.js"></script>
+<script>
+let S = null, sort = 'rank', q = '';
+
+const bars = (rows, color) => { const max = Math.max(1, ...rows.map(r => r[1]));
+  return rows.map((r,i) => `<div class="bar" style="--c:var(${color || COLORS[i%4]})"><span>${esc(r[0])}</span><div><u style="width:${r[1]/max*100}%"></u></div><em>${r[1]}</em></div>`).join(''); };
+const list = (arr, fn) => arr.map(m => `<li><span>${esc(m.name)}</span><b>${fn(m)}</b></li>`).join('');
+
+function render(d) {
+  S = d; const c = d.clan, ms = c.memberList;
+  document.title = 'Clan stats · ' + c.name; $('#nm').textContent = c.name;
+  const sum = k => ms.reduce((a,m) => a + (m[k]||0), 0), don = sum('donations'), rec = sum('donationsReceived');
+  const cards = [
+    ['Clan level', c.clanLevel, ''], ['Members', c.members + '/50', (50-c.members) + ' open'],
+    ['Clan points', fmt(c.clanPoints), 'Builder ' + fmt(c.clanBuilderBasePoints)],
+    ['War record', `${c.warWins ?? 0}W ${c.warLosses ?? '–'}L ${c.warTies ?? 0}T`, ''],
+    ['Win streak', c.warWinStreak ?? 0, ''], ['War league', c.warLeague?.name || '–', ''],
+    ['Capital hall', c.clanCapital?.capitalHallLevel ?? '–', c.capitalLeague?.name || ''],
+    ['Required trophies', fmt(c.requiredTrophies), c.type || ''],
+    ['Total trophies', fmt(sum('trophies')), 'Avg ' + fmt(Math.round(sum('trophies')/Math.max(1,ms.length)))],
+    ['Avg Town Hall', ms.length ? (sum('townHallLevel')/ms.length).toFixed(1) : '–', ''],
+    ['Troops donated', fmt(don), ''], ['Troops received', fmt(rec), 'Ratio ' + (rec ? (don/rec).toFixed(2) : '–')],
+  ];
+  $('#cards').innerHTML = cards.map((x,i) => `<div class="card" style="--c:var(${COLORS[i%4]})"><span>${x[0]}</span><b>${esc(x[1])}</b>${x[2]?`<small>${esc(x[2])}</small>`:''}</div>`).join('');
+  $('#sub').textContent = [c.location?.name, c.warFrequency && c.warFrequency !== 'unknown' ? 'War frequency: ' + c.warFrequency : ''].filter(Boolean).join(', ') || 'Live numbers straight from the game. Updates every 30 seconds.';
+  const by = {}; ms.forEach(m => by[m.townHallLevel] = (by[m.townHallLevel]||0) + 1);
+  $('#thbars').innerHTML = bars(Object.keys(by).map(Number).sort((a,b) => b-a).map(l => ['TH' + l, by[l]])) || '<div class="msg">No data</div>';
+  const rc = {}; ms.forEach(m => rc[m.role] = (rc[m.role]||0) + 1);
+  $('#rolebars').innerHTML = bars(['leader','coLeader','admin','member'].filter(r => rc[r]).map(r => [ROLE[r], rc[r]]));
+  $('#donors').innerHTML = list([...ms].sort((a,b) => b.donations-a.donations).slice(0,5), m => fmt(m.donations));
+  $('#tops').innerHTML = list([...ms].sort((a,b) => b.trophies-a.trophies).slice(0,5), m => fmt(m.trophies));
+  $('#warbox').innerHTML = warHTML(d.war);
+  $('#upd').textContent = 'Live ' + new Date(d.updated || Date.now()).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+  rows();
+}
+const rows = () => { if (S) $('#rl').innerHTML = rosterHead(true) + roster(S, sort, q, true); };
+$('#q').oninput = e => { q = e.target.value; rows(); };
+$('#sort').onchange = e => { sort = e.target.value; rows(); };
+loadConfig().then(() => { const go = live(render, e => {
+  $('#upd').textContent = 'Offline';
+  if (!S) $('#cards').innerHTML = `<div class="msg err" style="grid-column:1/-1">Couldn't load clan data: ${esc(e.message)}.<br>Check COC_API_TOKEN and its allowed IP, then refresh.</div>`;
+});
+$('#refresh').onclick = go; });
+</script>
+</body>
+</html>

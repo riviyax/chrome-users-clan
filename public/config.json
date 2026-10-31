@@ -1,0 +1,106 @@
+{
+  "clanTag": "#2CYGVVU9Y",
+  "refreshSeconds": 30,
+  "useClanDescription": false,
+  "theme": {
+    "red": "#ff6b6b",
+    "yellow": "#ffc93c",
+    "green": "#4cc38a",
+    "blue": "#5b9dff",
+    "bg": "#fff6ec",
+    "card": "#ffffff",
+    "card2": "#fff0e0",
+    "line": "#f0dcc8",
+    "ink": "#2b2540",
+    "sub": "#7a7090"
+  },
+  "sections": {
+    "why": true,
+    "champions": true,
+    "war": true,
+    "roster": true
+  },
+  "hero": {
+    "line1": "Open a new tab.",
+    "line2": "Win the",
+    "highlight": "war.",
+    "lead": "A friendly, active clan where every attack counts and every member gets noticed. Come build with us.",
+    "joinButton": "Join in Clash of Clans",
+    "copyButton": "Copy clan tag"
+  },
+  "why": {
+    "title": "A clan that actually plays.",
+    "subtitle": "Four things you can expect from us.",
+    "perks": [
+      {
+        "title": "Active wars",
+        "text": "Back-to-back wars with clear plans, so your stars always matter.",
+        "icon": "heroes/barbarian_king/icon.webp",
+        "color": "red"
+      },
+      {
+        "title": "Fair donations",
+        "text": "Donate, receive, repeat. Nobody gets left on an empty castle.",
+        "icon": "buildings/home-village/clan_castle/level_10.webp",
+        "color": "yellow"
+      },
+      {
+        "title": "Capital & Games",
+        "text": "We push Clan Games and Capital raids together, all the way to max rewards.",
+        "icon": "buildings/home-village/town_hall/level_16.webp",
+        "color": "green"
+      },
+      {
+        "title": "Good vibes",
+        "text": "New to the game or maxed out, you'll find people who help you improve.",
+        "icon": "spells/healing_spell.webp",
+        "color": "blue"
+      }
+    ]
+  },
+  "champions": {
+    "title": "Meet our top trophy pushers.",
+    "subtitle": "Tap a champion to see their full base stats."
+  },
+  "war": {
+    "title": "Right now on the battlefield.",
+    "subtitle": "Updates every 30 seconds."
+  },
+  "roster": {
+    "title": "Everyone in the clan.",
+    "statsButton": "Open full stats page"
+  },
+  "join": {
+    "title": "Join in three taps.",
+    "subtitle": "No forms. No waiting lists. Just a request and a warm welcome.",
+    "steps": [
+      {
+        "title": "Open the game",
+        "text": "Launch Clash of Clans, or tap the join button on your phone.",
+        "color": "red"
+      },
+      {
+        "title": "Find us",
+        "text": "Search our clan tag in the clan search.",
+        "color": "yellow"
+      },
+      {
+        "title": "Send a request",
+        "text": "Hit Join or Request. We'll accept you fast.",
+        "color": "green"
+      }
+    ],
+    "requirements": [
+      "Attack in every clan war",
+      "Donate more than you receive",
+      "Be active at least once a day"
+    ],
+    "finalTitle": "Your seat is",
+    "finalHighlight": "waiting.",
+    "finalSubtitle": "Bring your best army. We'll bring the rest.",
+    "finalButton": "Join Chrome Users now"
+  },
+  "footer": {
+    "text": "Not affiliated with Supercell or Google. Clash of Clans is a trademark of Supercell."
+  }
+}
