@@ -568,6 +568,9 @@ dialog::backdrop {
 }
 /* phones */
 @media (max-width: 820px) {
+  nav .logo{
+    margin-top: 20px;
+  }
   .links {
     order: 3;
     width: 100%;
