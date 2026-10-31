@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chrome Users · Join our Clash of Clans clan</title>
+<meta name="description" content="Chrome Users is a friendly, active Clash of Clans clan. Tap to join.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#090b10;--card:#12151d;--card2:#181c26;--line:#262c3a;--ink:#f2f4f8;--sub:#98a1b3;--red:#ea4335;--yellow:#fbbc04;--green:#34a853;--blue:#4285f4;--r:18px;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:'Bricolage Grotesque',Figtree,system-ui,sans-serif;letter-spacing:-.02em;line-height:1.02;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(9,11,16,.72);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}
+.ring{width:28px;height:28px;border-radius:50%;background:conic-gradient(var(--red) 0 33%,var(--yellow) 0 66%,var(--green) 0);display:grid;place-items:center}
+.ring i{width:12px;height:12px;border-radius:50%;background:var(--blue);border:2.5px solid var(--bg)}
+nav .links{margin-left:auto;display:flex;gap:20px;color:var(--sub);font-size:14px;font-weight:500}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:13px 24px;font:700 15px Figtree,sans-serif;cursor:pointer;text-decoration:none;color:#fff;background:var(--blue);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -8px var(--blue)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{box-shadow:none;border-color:var(--sub)}
+.btn.sm{padding:8px 16px;font-size:14px}
+/* hero */
+.hero{position:relative;padding:72px 0 56px;isolation:isolate}
+.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.38}
+.hero::before{width:480px;height:480px;left:-120px;top:-80px;background:var(--red)}
+.hero::after{width:520px;height:520px;right:-140px;top:60px;background:var(--blue)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(18,21,29,.7);border-radius:999px;padding:6px 14px;font-size:13px;color:var(--sub)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 var(--green);animation:pulse 2s infinite}
+.dot.err{background:var(--red);animation:none}
+@keyframes pulse{70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(44px,8vw,92px);margin:18px 0 16px;font-weight:800}
+.grad{background:linear-gradient(90deg,var(--red),var(--yellow),var(--green),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:var(--sub);font-size:19px;max-width:48ch;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.tagline{margin-top:18px;font-size:14px;color:var(--sub)}
+.tagline code{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:2px 8px;color:var(--ink)}
+.badge{position:relative;display:grid;place-items:center;aspect-ratio:1}
+.badge::before{content:"";position:absolute;inset:6%;border-radius:50%;background:conic-gradient(var(--red),var(--yellow),var(--green),var(--blue),var(--red));animation:spin 14s linear infinite;-webkit-mask:radial-gradient(circle,transparent 62%,#000 63%);mask:radial-gradient(circle,transparent 62%,#000 63%)}
+.badge img{width:60%;filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));animation:float 5s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-12px) rotate(2deg)}}
+/* ticker */
+.ticker{border-block:1px solid var(--line);background:var(--card);overflow:hidden;white-space:nowrap}
+.ticker div{display:inline-flex;gap:36px;padding:12px 0;animation:marq 40s linear infinite}
+.ticker:hover div{animation-play-state:paused}
+.ticker span{color:var(--sub);font-size:14px}.ticker b{color:var(--ink)}.ticker em{font-style:normal;color:var(--yellow)}
+@keyframes marq{to{transform:translateX(-50%)}}
+/* sections */
+section.s{padding:84px 0 0}
+.eyebrow{color:var(--yellow);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(30px,5vw,52px);margin-bottom:12px}
+.sub{color:var(--sub);max-width:58ch;margin:0 0 32px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;border-top:3px solid var(--c)}
+.stat span{display:block;color:var(--sub);font-size:13px}.stat b{font:800 32px 'Bricolage Grotesque',sans-serif}
+.perks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.perk{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.perk:hover{transform:translateY(-4px);border-color:var(--c)}
+.perk::after{content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;background:var(--c);opacity:.14;filter:blur(8px)}
+.perk .ic{display:block;margin-bottom:10px}.perk h3{font-size:22px;margin-bottom:6px}.perk p{margin:0;color:var(--sub);font-size:15px}
+/* podium */
+.podium{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:12px;align-items:end}
+.pod{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;text-align:center;border-bottom:4px solid var(--c);cursor:pointer;transition:transform .2s}
+.pod:hover{transform:translateY(-4px)}
+.pod:nth-child(2){padding-block:34px;background:linear-gradient(180deg,#2a2410,var(--card))}
+.pod .medal{width:32px;height:32px;margin:0 auto 6px;border-radius:50%;background:var(--c);color:#111;display:grid;place-items:center;font:800 17px 'Bricolage Grotesque'}.pod .im,.pod .fb{margin:0 auto 4px}.pod h3{font-size:22px;margin:4px 0}.pod small{color:var(--sub)}.pod b{display:block;font:800 28px 'Bricolage Grotesque',sans-serif;color:var(--yellow)}
+/* war */
+.war{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px 20px}
+.war h3{font-size:24px}.war .big{font:800 56px 'Bricolage Grotesque',sans-serif;line-height:1}.war .vs{color:var(--red);font:800 22px 'Bricolage Grotesque'}
+.war small{display:block;color:var(--sub)}.msg{padding:36px 20px;text-align:center;color:var(--sub);background:var(--card);border:1px dashed var(--line);border-radius:var(--r)}.msg.err{color:var(--red)}
+/* roster */
+.tools{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+input,select{font:inherit;padding:10px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink)}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th{text-align:left;font-weight:500;color:var(--sub);font-size:13px;padding:12px 14px;border-bottom:1px solid var(--line)}
+td{padding:11px 14px;border-bottom:1px solid var(--line)}tr:last-child td{border:0}
+tbody tr:hover td{background:var(--card2)}td.n{font-variant-numeric:tabular-nums}
+.role{font-size:12px;padding:2px 10px;border-radius:99px;background:var(--card2);color:var(--sub)}
+.role.leader{background:var(--red);color:#fff}.role.coLeader{background:var(--yellow);color:#111}.role.admin{background:var(--green);color:#fff}
+.th{font-weight:800;color:var(--blue)}
+.plink{border:0;background:none;padding:0;font:700 15px Figtree;color:var(--ink);cursor:pointer;text-decoration:underline;text-decoration-color:var(--blue);text-underline-offset:3px}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;counter-reset:s}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--c);color:#111;font:800 18px 'Bricolage Grotesque';margin-bottom:14px}
+.step h3{font-size:20px;margin-bottom:4px}.step p{margin:0;color:var(--sub);font-size:15px}
+.reqs{margin:28px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.reqs li{padding-left:28px;position:relative}.reqs li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+.final{margin-top:84px;padding:64px 24px;text-align:center;border-radius:28px;background:radial-gradient(circle at 20% 0,rgba(234,67,53,.35),transparent 50%),radial-gradient(circle at 85% 100%,rgba(66,133,244,.4),transparent 50%),var(--card);border:1px solid var(--line)}
+.final h2{font-size:clamp(34px,6vw,64px)}.final .cta{justify-content:center;margin-top:22px}
+footer{padding:40px 0 100px;color:var(--sub);text-align:center;font-size:14px}
+.sticky{display:none}
+/* player dialog */
+dialog{border:1px solid var(--line);border-radius:24px;background:var(--bg);color:var(--ink);padding:0;width:min(860px,94vw);max-height:90vh}
+dialog::backdrop{background:rgba(0,0,0,.7);backdrop-filter:blur(4px)}
+.dh{position:sticky;top:0;display:flex;justify-content:flex-end;padding:12px 14px 0;background:var(--bg);z-index:2}
+.dh button{border:0;background:var(--card);color:var(--ink);width:36px;height:36px;border-radius:50%;font-size:20px;cursor:pointer}
+.pcard{display:flex;gap:20px;align-items:center;padding:0 26px 8px;flex-wrap:wrap}
+.thb{width:96px;height:96px;border-radius:50%;padding:8px;background:conic-gradient(var(--red) 0 33%,var(--yellow) 0 66%,var(--green) 0)}
+.thb b{width:100%;height:100%;border-radius:50%;background:var(--card2);border:4px solid var(--bg);display:grid;place-items:center}
+.im{display:block;object-fit:contain}
+.fb{display:grid;place-items:center;background:var(--card2);color:var(--sub);font-weight:800;border-radius:12px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px}
+.gi{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 8px 10px;text-align:center;transition:transform .2s,border-color .2s}
+.gi:hover{transform:translateY(-4px);border-color:var(--c,var(--blue))}
+.gi .im,.gi .fb{margin:0 auto 6px}.gi span{display:block;font-size:13px;color:var(--sub);text-transform:capitalize}
+.lab{display:flex;gap:24px;align-items:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;margin-bottom:14px}
+.lab input[type=range]{width:100%;padding:0;accent-color:var(--blue)}
+.sg{font-size:22px;margin:34px 0 12px}
+.pcard h2{font-size:34px;margin:0}.pcard p{margin:2px 0 0;color:var(--sub)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;padding:14px 26px 0}
+.tile{border:1px solid var(--line);border-top:3px solid var(--c);border-radius:12px;padding:10px 14px;background:var(--card)}
+.tile span{display:block;color:var(--sub);font-size:12px}.tile b{font-size:22px}.tile small{display:block;color:var(--sub);font-size:12px}
+.psec{padding:0 26px 28px}.psec h3{font-size:18px;margin:22px 0 10px}
+.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.unit{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:var(--card);font-size:14px}.unit .im,.unit .fb{width:40px;height:40px;flex:none}.ub{flex:1;min-width:0}
+.uh{display:flex;justify-content:space-between;gap:8px}.uh i{font-style:normal;color:var(--sub)}
+.pb{height:5px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}.pb u{display:block;height:100%;background:var(--blue)}
+.unit.max .pb u{background:var(--green)}
+@media(max-width:820px){
+ .hero .wrap{grid-template-columns:1fr}.badge{max-width:260px;order:-1;margin:0 auto}
+ nav .links{display:none}nav .btn{margin-left:auto}
+ .war{grid-template-columns:1fr}.podium{grid-template-columns:1fr}
+ .sticky{display:flex;position:fixed;inset:auto 12px 12px;z-index:30;justify-content:center;padding:0}
+ .sticky .btn{width:100%;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+}
+@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="logo" href="#top"><span class="ring"><i></i></span><span class="disp" id="nm">Chrome Users</span></a>
+  <div class="links"><a href="#why">Why us</a><a href="#champs">Champions</a><a href="#war">War</a><a href="#roster">Roster</a><a href="stats.html">Full stats</a><a href="#join">How to join</a></div>
+  <a class="btn sm joinlink" href="#join">Join the clan</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="chip"><span class="dot" id="dot"></span><span id="slots">Checking open slots…</span></span>
+    <h1>Open a new tab.<br><span class="grad">Win the war.</span></h1>
+    <p class="lead" id="desc">A friendly, active clan where every attack counts and every member gets noticed. Come build with us.</p>
+    <div class="cta">
+      <a class="btn joinlink" id="deep" href="#join">Join in Clash of Clans</a>
+      <button class="btn ghost" id="copy">Copy clan tag</button>
+    </div>
+    <p class="tagline">Clan tag <code id="tag">#2CYGVVU9Y</code> · Search it in-game, or tap the button on your phone.</p>
+  </div>
+  <div class="badge"><img id="badge" alt="Clan badge" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+</div></header>
+
+<div class="ticker" aria-label="Top members"><div id="ticker"></div></div>
+
+<main class="wrap">
+  <section class="s"><div class="stats" id="stats"></div></section>
+
+  <section class="s" id="why">
+    <div class="eyebrow">Why Chrome Users</div>
+    <h2>A clan that actually plays.</h2>
+    <p class="sub">Edit these four cards to match your clan's real culture.</p>
+    <div class="perks">
+      <div class="perk" style="--c:var(--red)"><span class="ic"><img class="im" src="https://assets.clashk.ing/heroes/barbarian_king/icon.webp" width="64" height="64" alt="Barbarian King" loading="lazy"></span><h3>Active wars</h3><p>Back-to-back wars with clear plans, so your stars always matter.</p></div>
+      <div class="perk" style="--c:var(--yellow)"><span class="ic"><img class="im" src="https://assets.clashk.ing/buildings/home-village/clan_castle/level_10.webp" width="64" height="64" alt="Clan Castle" loading="lazy"></span><h3>Fair donations</h3><p>Donate, receive, repeat. Nobody gets left on an empty castle.</p></div>
+      <div class="perk" style="--c:var(--green)"><span class="ic"><img class="im" src="https://assets.clashk.ing/buildings/home-village/town_hall/level_16.webp" width="64" height="64" alt="Town Hall" loading="lazy"></span><h3>Capital &amp; Games</h3><p>We push Clan Games and Capital raids together, all the way to max rewards.</p></div>
+      <div class="perk" style="--c:var(--blue)"><span class="ic"><img class="im" src="https://assets.clashk.ing/spells/healing_spell.webp" width="64" height="64" alt="Healing Spell" loading="lazy"></span><h3>Good vibes</h3><p>New to the game or maxed out, you'll find people who help you improve.</p></div>
+    </div>
+  </section>
+
+  <section class="s" id="champs">
+    <div class="eyebrow">Hall of fame</div>
+    <h2>Meet our top trophy pushers.</h2>
+    <p class="sub">Tap a champion to see their full base stats.</p>
+    <div class="podium" id="podium"><div class="msg">Loading champions…</div></div>
+  </section>
+
+  <section class="s" id="war">
+    <div class="eyebrow">Live war room</div>
+    <h2>Right now on the battlefield.</h2>
+    <p class="sub" id="warsub">Updates every 30 seconds.</p>
+    <div id="warbox"><div class="msg">Loading war…</div></div>
+  </section>
+
+  <section class="s" id="roster">
+    <div class="eyebrow">The roster</div>
+    <h2>Everyone in the clan.</h2>
+    <p class="sub"><a class="btn ghost sm" href="stats.html">Open full stats page</a></p>
+    <div class="tools">
+      <input id="q" type="search" placeholder="Search members" aria-label="Search members">
+      <select id="sort" aria-label="Sort members">
+        <option value="rank">Clan rank</option><option value="trophies">Trophies</option><option value="donations">Troops donated</option><option value="received">Troops received</option><option value="th">Town Hall</option>
+      </select>
+    </div>
+    <div class="scroll"><table><thead><tr><th>#</th><th>Player</th><th>Role</th><th>TH</th><th>Trophies</th><th>Donated</th><th>Received</th></tr></thead><tbody id="rows"></tbody></table></div>
+  </section>
+
+  <section class="s" id="join">
+    <div class="eyebrow">Your turn</div>
+    <h2>Join in three taps.</h2>
+    <p class="sub">No forms. No waiting lists. Just a request and a warm welcome.</p>
+    <div class="steps">
+      <div class="step" style="--c:var(--red)"><h3>Open the game</h3><p>Launch Clash of Clans, or tap the join button on your phone.</p></div>
+      <div class="step" style="--c:var(--yellow)"><h3>Find us</h3><p>Search clan tag <b id="tag2">#2CYGVVU9Y</b> in the clan search.</p></div>
+      <div class="step" style="--c:var(--green)"><h3>Send a request</h3><p>Hit Join or Request. We'll accept you fast.</p></div>
+    </div>
+    <ul class="reqs" id="reqs"></ul>
+    <div class="final">
+      <h2>Your seat is <span class="grad">waiting.</span></h2>
+      <p class="sub" style="margin:12px auto 0">Bring your best army. We'll bring the rest.</p>
+      <div class="cta"><a class="btn joinlink deeplink" href="#">Join Chrome Users now</a><button class="btn ghost" id="copy2">Copy clan tag</button></div>
+    </div>
+  </section>
+</main>
+<footer>Not affiliated with Supercell or Google. Clash of Clans is a trademark of Supercell.<br>Game art via <a href="https://github.com/ClashKingInc/ClashKingAssets" target="_blank" rel="noopener">ClashKing Assets</a>.</footer>
+<div class="sticky"><a class="btn deeplink" href="#">Join the clan</a></div>
+
+<dialog id="dlg" aria-label="Player details"><div class="dh"><button id="close" aria-label="Close">×</button></div><div id="pc"></div></dialog>
+
+<script>
+/* ---- EDIT ME ---- */
+const CFG = {
+  tag: '2CYGVVU9Y',
+  requirements: ['Attack in every clan war','Donate more than you receive','Be active at least once a day']
+};
+/* ---------------- */
+const REFRESH_MS = 30000;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => (n ?? 0).toLocaleString();
+const ROLE = {leader:'Leader', coLeader:'Co-leader', admin:'Elder', member:'Member'};
+const COLORS = ['--red','--yellow','--green','--blue'];
+const parseCoc = t => t ? new Date(t.replace(/(\d{4})(\d\d)(\d\d)T(\d\d)(\d\d)(\d\d).*/, '$1-$2-$3T$4:$5:$6Z')) : null;
+const DEEP = 'https://link.clashofclans.com/en?action=OpenClanProfile&tag=' + CFG.tag;
+const A = 'https://assets.clashk.ing/';
+const slug = s => String(s).toLowerCase().replace(/ /g,'_').replace(/[.?]/g,'').replace(/’/g,'');
+const nm = n => n.replace(/[_-]/g,' ');
+const im = (chain,alt,px,cls='') => `<img class="im ${cls}" src="${A+chain[0]}" data-f="${chain.slice(1).join('|')}" data-n="${esc(alt)}" alt="${esc(alt)}" width="${px}" height="${px}" loading="lazy">`;
+const bld = (n,l,px,cls) => { l = Math.max(1,Math.min(+l||1,18)); return im(Array.from({length:l},(_,i)=>`buildings/home-village/${n}/level_${l-i}.webp`), nm(n), px, cls); };
+const unitImg = (name,px,first) => { const s = slug(name), all = {troops:`troops/${s}/icon.webp`,heroes:`heroes/${s}/icon.webp`,pets:`pets/${s}/icon.webp`,spells:`spells/${s}.webp`,equipment:`equipment/${s}.webp`}; return im([all[first],...Object.keys(all).filter(k=>k!==first).map(k=>all[k])], name, px); };
+document.addEventListener('error', e => { const i = e.target; if(i.tagName!=='IMG' || !i.classList.contains('im')) return;
+  const f = i.dataset.f ? i.dataset.f.split('|') : [];
+  if(f.length){ i.src = A + f.shift(); i.dataset.f = f.join('|'); return; }
+  const sp = document.createElement('span'); sp.className = 'fb'; sp.style.cssText = `width:${i.getAttribute('width')}px;height:${i.getAttribute('height')}px`;
+  sp.textContent = (i.dataset.n || i.alt || '?')[0].toUpperCase(); i.replaceWith(sp); }, true);
+let state = null, sort = 'rank', q = '';
+const players = {};
+
+/* static bits */
+document.querySelectorAll('.deeplink,#deep').forEach(a => { a.href = DEEP; a.target = '_blank'; a.rel = 'noopener'; });
+$('#tag').textContent = $('#tag2').textContent = '#' + CFG.tag;
+$('#reqs').innerHTML = CFG.requirements.map(r => `<li>${esc(r)}</li>`).join('');
+['#copy','#copy2'].forEach(id => $(id).onclick = async e => {
+  const b = e.currentTarget, old = b.textContent;
+  try { await navigator.clipboard.writeText('#' + CFG.tag); b.textContent = 'Copied ✓'; } catch { b.textContent = '#' + CFG.tag; }
+  setTimeout(() => b.textContent = old, 1800);
+});
+
+async function load(){
+  try{
+    const r = await fetch('/api/clan'); const d = await r.json();
+    if(!r.ok) throw new Error(d.error || 'Request failed');
+    state = d; render();
+    $('#dot').className = 'dot';
+  }catch(e){
+    $('#dot').className = 'dot err';
+    if(!state){
+      $('#slots').textContent = 'Live data offline';
+      const m = `<div class="msg err">Couldn't load clan data: ${esc(e.message)}.<br>Check COC_API_TOKEN and its allowed IP, then refresh.</div>`;
+      $('#podium').innerHTML = $('#warbox').innerHTML = m;
+    }
+  }
+}
+
+function render(){
+  const c = state.clan, left = 50 - c.members;
+  document.title = c.name + ' · Join our Clash of Clans clan';
+  $('#nm').textContent = c.name;
+  if(c.badgeUrls?.large) $('#badge').src = c.badgeUrls.large;
+  if(c.description) $('#desc').textContent = c.description;
+  $('#slots').textContent = left > 0 ? `${left} open slot${left>1?'s':''} · ${c.members}/50 members` : 'Clan is full · check back soon';
+  const top = [...c.memberList].sort((a,b)=>b.trophies-a.trophies);
+  const tk = top.slice(0,12).map(m => `<span><b>${esc(m.name)}</b> <em>${fmt(m.trophies)} trophies</em></span>`).join('');
+  $('#ticker').innerHTML = tk + tk;
+  const st = [['Clan level',c.clanLevel],['Members',c.members+'/50'],['Clan points',fmt(c.clanPoints)],['War wins',c.warWins ?? 0],['Win streak',c.warWinStreak ?? 0],['War league',c.warLeague?.name || '–']];
+  $('#stats').innerHTML = st.map((s,i)=>`<div class="stat" style="--c:var(${COLORS[i%4]})"><span>${s[0]}</span><b${String(s[1]).length>9?' style="font-size:20px"':''}>${esc(s[1])}</b></div>`).join('');
+  const cols = ['--yellow','--sub','--red'];
+  const order = [1,0,2].filter(i => top[i]);
+  $('#podium').innerHTML = order.map(i => { const m = top[i];
+    return `<div class="pod" style="--c:var(${cols[i]})" data-tag="${esc(m.tag)}" tabindex="0" role="button"><div class="medal">${i+1}</div>${bld('town_hall',m.townHallLevel,72)}<h3>${esc(m.name)}</h3><small>${ROLE[m.role]||m.role} · TH${m.townHallLevel}</small><b>${fmt(m.trophies)}</b></div>`; }).join('') || '<div class="msg">No members yet.</div>';
+  rows(); warBox();
+}
+
+function rows(){
+  if(!state) return;
+  const key = {rank:(a,b)=>a.clanRank-b.clanRank, trophies:(a,b)=>b.trophies-a.trophies, donations:(a,b)=>b.donations-a.donations, received:(a,b)=>b.donationsReceived-a.donationsReceived, th:(a,b)=>b.townHallLevel-a.townHallLevel||b.trophies-a.trophies}[sort];
+  const list = state.clan.memberList.filter(m => m.name.toLowerCase().includes(q.toLowerCase())).sort(key);
+  $('#rows').innerHTML = list.map(m => `<tr><td class="n">${m.clanRank}</td><td><button class="plink" data-tag="${esc(m.tag)}">${esc(m.name)}</button> <span style="color:var(--sub);font-size:12px">Lv ${m.expLevel}</span></td><td><span class="role ${esc(m.role)}">${ROLE[m.role]||esc(m.role)}</span></td><td><span class="th" style="display:inline-flex;align-items:center;gap:8px">${bld('town_hall',m.townHallLevel,30)}${m.townHallLevel}</span></td><td class="n">${fmt(m.trophies)}</td><td class="n">${fmt(m.donations)}</td><td class="n">${fmt(m.donationsReceived)}</td></tr>`).join('') || '<tr><td colspan="7" style="text-align:center;color:var(--sub)">No members match that search.</td></tr>';
+}
+$('#q').oninput = e => { q = e.target.value; rows(); };
+$('#sort').onchange = e => { sort = e.target.value; rows(); };
+
+function warBox(){
+  const w = state.war, box = $('#warbox');
+  if(!w) return box.innerHTML = `<div class="msg">War details unavailable. The clan's war log may be private.</div>`;
+  if(w.state === 'notInWar') return box.innerHTML = `<div class="msg">No war right now. Join and be ready for the next one.</div>`;
+  const a = w.clan, b = w.opponent;
+  const label = {preparation:'Preparation day', inWar:'Battle day', warEnded:'War ended'}[w.state] || w.state;
+  const end = w.state === 'preparation' ? parseCoc(w.startTime) : parseCoc(w.endTime);
+  const ms = end ? Math.max(0, end - Date.now()) : 0, h = Math.floor(ms/36e5), m = Math.floor(ms%36e5/6e4);
+  const side = x => `<div><h3>${esc(x.name)}</h3><div class="big">${x.stars ?? 0}★</div><small>${(x.destructionPercentage ?? 0).toFixed(1)}% destroyed</small><small>${x.attacks ?? 0} attacks used</small></div>`;
+  $('#warsub').textContent = `${label}${w.state!=='warEnded' ? ` · ${h}h ${m}m ${w.state==='preparation'?'until battle':'left'}` : ''} · ${w.teamSize}v${w.teamSize}`;
+  box.innerHTML = `<div class="war">${side(a)}<div class="vs">VS</div>${side(b)}</div>`;
+}
+
+/* player dialog */
+const unit = (n,l,max,k) => `<div class="unit ${l>=max?'max':''}">${unitImg(n,40,k)}<div class="ub"><div class="uh"><span>${esc(n)}</span><b>${l}<i>/${max}</i></b></div><div class="pb"><u style="width:${Math.min(100,l/max*100)}%"></u></div></div></div>`;
+const group = (t,arr,note,k) => arr?.length ? `<h3>${t}</h3>${note?`<p style="color:var(--sub);font-size:13px;margin:-4px 0 10px">${note}</p>`:''}<div class="units">${arr.map(u=>unit(u.name,u.level,u.maxLevel,k)).join('')}</div>` : '';
+
+async function openPlayer(tag){
+  $('#pc').innerHTML = '<div class="msg" style="border:0">Loading player…</div>';
+  if(!$('#dlg').open) $('#dlg').showModal();
+  try{
+    const r = await fetch('/api/player?tag=' + encodeURIComponent(tag)); const d = await r.json();
+    if(!r.ok) throw new Error(d.error || 'Request failed');
+    players[tag] = d; showPlayer(d);
+  }catch(e){ $('#pc').innerHTML = `<div class="msg err" style="border:0">Couldn't load this player: ${esc(e.message)}</div>`; }
+}
+function showPlayer(p){
+  const home = a => (a||[]).filter(u => u.village === 'home');
+  const near = (p.achievements||[]).filter(a => a.village==='home' && a.stars<3 && a.target>0).sort((a,b)=>b.value/b.target-a.value/a.target).slice(0,6);
+  const league = p.leagueTier?.name || p.league?.name || 'Unranked';
+  const tiles = [['Trophies',fmt(p.trophies),'Best '+fmt(p.bestTrophies)],['War stars',fmt(p.warStars),''],['Attacks won',fmt(p.attackWins),'Defenses won '+fmt(p.defenseWins)],['Donated',fmt(p.donations),'Received '+fmt(p.donationsReceived)],['Capital gold given',fmt(p.clanCapitalContributions),''],['Builder Hall '+(p.builderHallLevel ?? '–'),fmt(p.builderBaseTrophies),'Builder trophies']];
+  $('#pc').innerHTML = `
+    <section class="pcard"><div class="thb"><b>${bld('town_hall',p.townHallLevel,66)}</b></div>
+      <div><h2>${esc(p.name)}</h2><p>${esc(p.tag)} · Level ${p.expLevel} · ${esc(league)}</p><p>${p.clan ? `${ROLE[p.role]||esc(p.role||'Member')} in ${esc(p.clan.name)}` : 'Not in a clan'}</p></div></section>
+    <section class="tiles">${tiles.map((t,i)=>`<div class="tile" style="--c:var(${COLORS[i%4]})"><span>${t[0]}</span><b>${t[1]}</b>${t[2]?`<small>${t[2]}</small>`:''}</div>`).join('')}</section>
+    <section class="psec">
+      ${group('Heroes', home(p.heroes), 'Progress toward the max level for Town Hall ' + p.townHallLevel, 'heroes')}
+      ${group('Hero equipment', p.heroEquipment, '', 'equipment')}
+      ${group('Troops, siege and pets', home(p.troops), '', 'troops')}
+      ${group('Spells', home(p.spells), '', 'spells')}
+      ${near.length ? `<h3>Closest achievements</h3><div class="units">${near.map(a=>`<div class="unit"><div class="ub"><div class="uh"><span>${esc(a.name)}</span><b style="color:var(--yellow)">${'★'.repeat(a.stars)}${'☆'.repeat(3-a.stars)}</b></div><div class="pb"><u style="width:${Math.min(100,a.value/a.target*100)}%"></u></div><small style="color:var(--sub)">${esc(a.info)}: ${fmt(a.value)} of ${fmt(a.target)}</small></div></div>`).join('')}</div>` : ''}
+    </section>`;
+}
+$('#close').onclick = () => $('#dlg').close();
+$('#dlg').addEventListener('click', e => { if(e.target === e.currentTarget) e.currentTarget.close(); });
+document.addEventListener('click', e => { const t = e.target.closest('[data-tag]'); if(t) openPlayer(t.dataset.tag); });
+document.addEventListener('keydown', e => { if((e.key==='Enter'||e.key===' ') && e.target.matches('.pod')){ e.preventDefault(); openPlayer(e.target.dataset.tag); } });
+
+load();
+setInterval(load, REFRESH_MS);
+document.addEventListener('visibilitychange', () => { if(!document.hidden) load(); });
+</script>
+</body>
+</html>
