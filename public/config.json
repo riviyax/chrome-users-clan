@@ -3,16 +3,10 @@
   "refreshSeconds": 30,
   "useClanDescription": false,
   "theme": {
-    "red": "#ff6b6b",
-    "yellow": "#ffc93c",
-    "green": "#4cc38a",
-    "blue": "#5b9dff",
-    "bg": "#fff6ec",
-    "card": "#ffffff",
-    "card2": "#fff0e0",
-    "line": "#f0dcc8",
-    "ink": "#2b2540",
-    "sub": "#7a7090"
+    "red": "#e8453c",
+    "yellow": "#ffc933",
+    "green": "#5fc33a",
+    "blue": "#3d8bff"
   },
   "sections": {
     "why": true,
@@ -102,5 +96,6 @@
   },
   "footer": {
     "text": "Not affiliated with Supercell or Google. Clash of Clans is a trademark of Supercell."
-  }
+  },
+  "mode": "auto"
 }
